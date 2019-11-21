@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "abd98408-ef34-4386-9518-7824f80c26f0",
+		"name": "DotNetCoreArchitecture copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "SignInAsync",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1dac79a0-d950-4c07-adc2-11d88d94cb60",
+								"exec": [
+									"var json = JSON.parse(responseBody);\r",
+									"pm.globals.set(\"token\", json.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"login\": \"admin\",\n\t\"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8090/Users/SignIn",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"Users",
+								"SignIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6WyJVc2VyIiwiQWRtaW4iXSwibmJmIjoxNTcwNTY2MTg5LCJleHAiOjE1NzA2MDkzODl9.cQe5Z3jrdXoHgQSIO2gxqKa7dJ9KPg-sA0s5tJXaumBdlv2fmSWM_wGyKfakHaRRnLqHYocAgKT2Wc9JyFEw-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8090/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SelectAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6WyJVc2VyIiwiQWRtaW4iXSwibmJmIjoxNTcwNTY0NjUxLCJleHAiOjE1NzA2MDc4NTF9.zN8RSutXKeSdLLWk1TejQGvd8OzBGRhUrzXwg4LjelLaFLDIMwiEr_aeCbKaTaLgFp66QBxb-iJCM0iRKLdfag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8090/users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GridAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6WyJVc2VyIiwiQWRtaW4iXSwibmJmIjoxNTcwNTY0NjUxLCJleHAiOjE1NzA2MDc4NTF9.zN8RSutXKeSdLLWk1TejQGvd8OzBGRhUrzXwg4LjelLaFLDIMwiEr_aeCbKaTaLgFp66QBxb-iJCM0iRKLdfag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8090/Users/Grid?Page.Index=1&Page.Size=10&Order.Property=UserId&Order.Ascending=true",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"Users",
+								"Grid"
+							],
+							"query": [
+								{
+									"key": "Page.Index",
+									"value": "1"
+								},
+								{
+									"key": "Page.Size",
+									"value": "10"
+								},
+								{
+									"key": "Order.Property",
+									"value": "UserId"
+								},
+								{
+									"key": "Order.Ascending",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6WyJVc2VyIiwiQWRtaW4iXSwibmJmIjoxNTcwNTY0NjUxLCJleHAiOjE1NzA2MDc4NTF9.zN8RSutXKeSdLLWk1TejQGvd8OzBGRhUrzXwg4LjelLaFLDIMwiEr_aeCbKaTaLgFp66QBxb-iJCM0iRKLdfag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"fullName\": {\r\n\t\t\"name\": \"Adnan\",\r\n\t\t\"surname\": \"Ghafoor\"\r\n\t},\r\n\t\"email\": \"adnanghafoor97@gmail.com\",\r\n\t\"DOB\": \"26-01-1990\",\r\n\t\"City\": \"Lahore\",\r\n\t\"Country\": \"Pakistan\",\r\n\t\"Gender\": \"Male\",\r\n\t\"signIn\": {\r\n\t\t\"login\": \"adnan\",\r\n\t\t\"password\": \"adnan123\"\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:8090/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"userId\": 2,\r\n\t\"fullName\": {\r\n\t\t\"name\": \"Name {{$timestamp}}\",\r\n\t\t\"surname\": \"Surname {{$timestamp}}\"\r\n\t},\r\n\t\"email\": \"email{{$timestamp}}@mail.com\",\r\n\t\"signIn\": {\r\n\t\t\"login\": \"{{$timestamp}}\",\r\n\t\t\"password\": \"{{$timestamp}}\"\r\n\t},\r\n\t\"status\": 1\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InactivateAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/users/2/inactivate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"2",
+								"inactivate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAsync",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
